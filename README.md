@@ -12,12 +12,32 @@ CBR, RAG, Harmful Meme Detection, LLM Agents, Tool Adaptation
 - `data/`: This directory contains datasets utilized / generated in the experiments mentioned in the paper.
 - `results/`: This directory contains the main experimental results for RAMTA.
 - `README.md`: This file provides an overview of the repository.
-
+## Prompts
+All detailed prompt templates are available in `utils/prompts.py` and `code/prompts.py`.
 ## Quick Start
-Before running the framework:
 
-1. Prepare the dataset.  
-   Download the required harmful meme detection dataset (e.g., FHM, HarM, or MAMI) and place the images and annotations in the corresponding `data/` directory.
+1. Prepare the datasets.  
+   Please obtain FHM, HarM, and MAMI, and place them in the following directories:
+
+```text
+MIND/
+├── data/
+│   ├── FHM/
+│   │   ├── images/
+│   │   │   └── ...
+│   │   ├── test.jsonl
+│   │   └── train.jsonl
+│   ├── HarM/
+│   │   ├── images/
+│   │   │   └── ...
+│   │   ├── test.jsonl
+│   │   └── train.jsonl
+│   └── MAMI/
+│       ├── images/
+│       │   └── ...
+│       ├── test.jsonl
+│       └── train.jsonl
+└── ...
 
 2. Configure the API.  
    Open `config.py` and set your API key, API base URL, and default model.
