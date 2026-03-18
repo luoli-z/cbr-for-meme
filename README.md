@@ -8,9 +8,10 @@ CBR, RAG, Harmful Meme Detection, LLM Agents, Tool Adaptation
 
 ## Repository Structure
 
-- `code/`: This directory contains the codebase for implementing / evaluating CBR-RAG.
+- `code/`: This directory contains the codebase for implementing / evaluating RAMTA.
 - `data/`: This directory contains datasets utilized / generated in the experiments mentioned in the paper.
 - `results/`: This directory contains the main experimental results for RAMTA.
+- `utils/`: This directory contains utility scripts and supporting resources, including prompt templates and data processing helpers.
 - `README.md`: This file provides an overview of the repository.
 ## Prompts
 All detailed prompt templates are available in `utils/prompts.py` and `code/prompts.py`.
@@ -38,7 +39,7 @@ MIND/
 │       ├── test.jsonl
 │       └── train.jsonl
 └── ...
-
+```
 2. Configure the API.  
    Open `config.py` and set your API key, API base URL, and default model.
 
@@ -46,3 +47,6 @@ MIND/
 
 ```bash
 python code/run_framework.py --mode main --dataset FHM --model gemini-flash
+```
+
+For more implementation details, please refer to `code/README.md`.
