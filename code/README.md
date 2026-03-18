@@ -1,4 +1,4 @@
-This framework implements a comprehensive approach to zero-shot multimodal meme detection using retrieval augmentation and multi-tool cognitive analysis.
+This framework implements a comprehensive approach to zero-shot multimodal meme detection using CBR with retrieval augmentation and multi-tool cognitive analysis.
 
 ## Quick Start
 
