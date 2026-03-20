@@ -18,13 +18,13 @@ from openai import OpenAI
 
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from framework.config import (
+from code.config import (
     API_BASE_URL, AVAILABLE_MODELS, DEFAULT_MODEL, 
     DEFAULT_FRAMEWORK_CONFIG, DATASET_CONFIGS
 )
-from framework.tools import ToolObservation, ToolType
-from framework.router import RoutingPlan
-from framework.knowledge_base import RetrievalResult
+from code.tools import ToolObservation, ToolType
+from code.router import RoutingPlan
+from code.knowledge_base import RetrievalResult
 
 
 @dataclass
@@ -613,7 +613,7 @@ class EnsembleAdjudicator:
 
 
 if __name__ == "__main__":
-    from framework.tools import CognitiveToolManager, ToolType
+    from code.tools import CognitiveToolManager, ToolType
     
     # Test the adjudicator
     manager = CognitiveToolManager()
