@@ -8,13 +8,13 @@ CBR, RAG, Harmful Meme Detection, LLM Agents, Tool Adaptation
 
 ## Repository Structure
 
-- `code/`: This directory contains the codebase for implementing / evaluating RAMTA.
+- `framework/`: This directory contains the codebase for implementing / evaluating RAMTA.
 - `data/`: This directory contains datasets utilized / generated in the experiments mentioned in the paper.
 - `results/`: This directory contains the main experimental results for RAMTA.
 - `utils/`: This directory contains utility scripts and supporting resources, including prompt templates and data processing helpers.
 - `README.md`: This file provides an overview of the repository.
 ## Prompts
-All detailed prompt templates are available in `utils/prompts.py` and `code/prompts.py`.
+All detailed prompt templates are available in `utils/prompts.py` and `framework/prompts.py`.
 ## Quick Start
 
 1. Prepare the datasets.  
@@ -46,7 +46,7 @@ MIND/
 3. Run the framework.
 
 ```bash
-python code/run_framework.py --mode main --dataset FHM --model gemini-flash
+python framework/run_framework.py --mode main --dataset FHM --model gemini-flash
 ```
 
 For more implementation details, please refer to `code/README.md`.
