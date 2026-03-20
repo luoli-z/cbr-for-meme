@@ -49,4 +49,4 @@ MIND/
 python framework/run_framework.py --mode main --dataset FHM --model gemini-flash
 ```
 
-For more implementation details, please refer to `code/README.md`.
+For more implementation details, please refer to `framework/README.md`.
