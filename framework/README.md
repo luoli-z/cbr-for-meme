@@ -23,13 +23,13 @@ print(f"Reasoning: {result.reasoning}")
 ```
 
 ```bash
-python code/run_framework.py --mode main --dataset FHM --model gemini-flash
+python framework/run_framework.py --mode main --dataset FHM --model gemini-flash
 ```
 
 ## File Structure
 
 ```
-code/
+framework/
 ├── __init__.py               # Module exports
 ├── config.py                 # Configuration file
 ├── case_base.py              # Case base module
