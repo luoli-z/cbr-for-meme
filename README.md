@@ -18,17 +18,18 @@ All detailed prompt templates are available in `utils/prompts.py` and `framework
 
 ## Efficiency Analysis
 
-A common critique of multi-agent frameworks is their high latency and computational overhead. To address this, we evaluate the inference efficiency of RAMTA against representative baselines. Fig.5 illustrates the average Time Consumption (seconds) and Token Consumption (thousands of tokens) per sample on the HarM dataset using a single NVIDIA RTX 4090.
+A common concern for applying case-based reasoning in emerging multimodal moderation settings is whether the additional stages of retrieval, adaptation, and revision introduce prohibitive latency and computational cost. To assess the practical viability of RAMTA as an application-oriented CBR system, we evaluate its inference efficiency against representative baselines. The Figure reports the average **time consumption** (seconds) and **token consumption** (thousands of tokens) per sample on the HarM dataset using a single NVIDIA RTX 4090.
 
-**Empirical Efficiency via Prior Guidance and Parallelization.** Single-pass direct inference models (e.g., InstructBLIP, LLaVA-1.5) are inherently fast ($\le$2.1s) and token-efficient ($\le$1.2k) but struggle to decode complex memes. Proprietary APIs like GPT-4o (CoT) offer moderate latency (5.5s) and token usage (2.5k) but lack structured multi-view reasoning capabilities. Conversely, multi-agent frameworks naturally consume more resources. For instance, the multi-agent baseline MIND requires 8.4s and 3.5k tokens.
+**Efficiency of CBR-Guided Reuse and Parallel Adaptation.** Single-pass direct inference models (e.g., InstructBLIP and LLaVA-1.5) are naturally fast (<= 2.1s) and token-efficient (<= 1.2k), but they often fail to resolve culture-dependent or context-heavy harmful memes. GPT-4o (CoT achieves moderate latency (5.5s) and token usage (2.5k), yet still lacks explicit precedent reuse and structured conflict resolution. Multi-agent frameworks generally incur higher overhead; for example, MIND requires 8.4s and 3.5k tokens per sample.
 
-RAMTA effectively mitigates this multi-agent overhead through two structural optimizations. First, explicit prior guidance prevents verbose, unguided CoT reasoning, effectively capping token usage for the decoupled experts at 4.1k. Second, asynchronous parallel execution of these agents (RAMTA (Ours)) slashes sequential latency (RAMTA (Seq)) from 14.5s to 7.8s.
+RAMTA controls this overhead through two CBR-compatible design choices. First, retrieved cases provide prior guidance for adaptation, reducing verbose unguided reasoning and keeping token usage bounded at 4.1k. Second, the selected tools are executed asynchronously, reducing latency from 14.5s in the sequential setting to 7.8s in the parallel version. These results show that explicit case-guided reuse does not make the system impractical; rather, it helps structure downstream reasoning while maintaining competitive efficiency.
 
-Despite executing a rigorous three-stage reasoning pipeline, RAMTA maintains competitive latency, actually slightly outperforming MIND (7.8s vs. 8.4s). Overall, the consistent performance gains achieved by RAMTA strongly justify this moderate resource trade-off, demonstrating its practicality for real-world deployment.
+Overall, although RAMTA performs a three-stage CBR-inspired reasoning process, it remains efficient in practice and slightly outperforms MIND in latency (7.8s vs. 8.4s). This suggests that explicit retrieval, adaptive reuse, and revision can be incorporated into an emerging harmful meme detection application without incurring prohibitive deployment cost.
 
 <p align="center">
-  <img src="results/Efficiency.png" alt="Empirical efficiency comparison on the HarM dataset" width="700">
+  <img src="results/Efficiency.svg" alt="Empirical efficiency comparison on the HarM dataset" width="700">
 </p>
+<p align="center"><em>Figure. Efficiency comparison on the HarM dataset.</em></p>
 
 
 ## Quick Start
