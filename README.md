@@ -27,7 +27,7 @@ RAMTA effectively mitigates this multi-agent overhead through two structural opt
 Despite executing a rigorous three-stage reasoning pipeline, RAMTA maintains competitive latency, actually slightly outperforming MIND (7.8s vs. 8.4s). Overall, the consistent performance gains achieved by RAMTA strongly justify this moderate resource trade-off, demonstrating its practicality for real-world deployment.
 
 <p align="center">
-  <img src="assets/efficiency.png" alt="Empirical efficiency comparison on the HarM dataset" width="700">
+  <img src="results/Efficiency.png" alt="Empirical efficiency comparison on the HarM dataset" width="700">
 </p>
 
 
